@@ -13,7 +13,7 @@ constexpr auto MAX_DIFF{ 3 };
 void
 getVector(std::vector<int>& inputVector, std::string& line)
 {
-    size_t i{0};
+    size_t i{ 0 };
     auto end = line.find(DELIMETER, i);
     try {
         while (end != line.npos) {
@@ -34,7 +34,7 @@ getSafe(std::vector<int>& inputVector,
         std::function<bool(int, int)>&& comp,
         int diff)
 {
-    auto prev = inputVector[0];
+    auto prev{ inputVector[0] };
     bool res{ true };
     for (int i = 1; i < inputVector.size(); ++i) {
         res &= comp(prev, inputVector[i]);
@@ -48,7 +48,7 @@ main(int argc, char* argv[])
 {
     std::ifstream file{ INPUT_FILE };
     std::string line;
-    size_t i = 0;
+    size_t i{ 0 };
 
     int safeReports{ 0 };
     while (std::getline(file, line)) {
